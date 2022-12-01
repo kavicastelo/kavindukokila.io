@@ -2,10 +2,10 @@
    // data sent in header are in JSON format
    header('Content-Type: application/json');
    // takes the value from variables and Post the data
-   $name = $_GET['name'];
-   $email = $_GET['email'];
-   $contact = $_GET['contact'];
-   $postmessage = $_GET['message'];  
+   $name = $_POST['name'];
+   $email = $_POST['email'];
+   $contact = $_POST['contact'];
+   $postmessage = $_POST['message'];  
    $to = "kkavindu221@gmail.com";
    $subject = "Contact Us";
    // Email Template
