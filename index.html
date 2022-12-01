@@ -373,7 +373,7 @@
                                         </h5>
                                     </div>
                                     <div>
-                                        <form name="sendMail" id="sendMailForm" action="https://docs.google.com/forms/d/e/1FAIpQLScC7pftVtOGpP84Fv94rKeqsInwYQSIQvaO4mHdqlr5An8aXg/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
+                                        <form name="sendMail" id="sendMailForm" action="https://docs.google.com/forms/d/e/1FAIpQLScC7pftVtOGpP84Fv94rKeqsInwYQSIQvaO4mHdqlr5An8aXg/formResponse?usp=pp_url" onsubmit="submitted=true;">
                                             <div class="form-group user-name">
                                                 <label for="name" class="sr-only">Name</label>
                                                 <!-- "id" for taking name -->
@@ -404,7 +404,6 @@
                                             <!-- submit button -->
                                             <button type="submit" class="btn btn-primary">Send Message <i class="fa fa-paper-plane"></i></button>
                                         </form>
-<!--                                         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe> -->
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -453,14 +452,6 @@
     </section>
 <!--section contact-->
 
-<script type="text/javascript">var submitted=false;</script>
-<script type="text/javascript">
-$('#gform').on('submit', function(e) {
-  $('#gform *').fadeOut(2000);
-  $('#gform').prepend('Your submission has been processed...');
-  });
-</script>
-
 <link href="main.js">
 <!-- JavaScript Libraries -->
 <script src="lib/jquery/jquery.min.js"></script>
@@ -477,5 +468,13 @@ $('#gform').on('submit', function(e) {
 <script src="contactform/contactform.js"></script>
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
+
+<script type="text/javascript">let submitted=false;</script>
+<script type="text/javascript">
+$('#sendMailForm').on('submit', function(e) {
+  $('#sendMailForm *').fadeOut(2000);
+  $('#sendMailForm').prepend('Your submission has been processed...');
+  });
+</script>
 </body>
 </html>
