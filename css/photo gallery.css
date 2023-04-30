@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: transparent;
+}
+
+.container {
+    position: relative;
+    /* to get a regualr hexagon with clip-path use the same scale, width is sqrt(3) / 2 of the height  */
+    width: calc(180px * 0.866);
+    height: 180px;
+}
+
+.box {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #120302;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.box img {
+    width: 100%;
+    transform-origin: 50% 50%;
+    object-fit: cover;
+    transition: all 0.5s ease-out;
+}
+.box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.45);
+    transition: all 0.5s ease-out;
+}
+.box:hover img {
+    transform: scale(1.2);
+}
+.box:hover::after {
+    background: rgba(0, 0, 0, 0);
+}
+
+.box2.box {
+    transform: translate(calc(-50% - (10px / 2)), calc(-75% - (10px) / 2 * 1.732));
+}
+
+.box3.box {
+    transform: translate(calc(50% + (10px / 2)), calc(-75% - (10px) / 2 * 1.732));
+}
+
+.box4.box {
+    transform: translate(calc(-100% - 10px), 0);
+}
+
+.box5.box {
+    transform: translate(calc(100% + 10px), 0);
+}
+
+.box6.box {
+    transform: translate(calc(-50% - (10px / 2)), calc(75% + (10px) / 2 * 1.732));
+}
+
+.box7.box {
+    transform: translate(calc(50% + (10px / 2)), calc(75% + (10px) / 2 * 1.732));
+}
