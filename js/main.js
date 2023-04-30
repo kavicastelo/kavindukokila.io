@@ -164,7 +164,7 @@ let htmlbar = document.getElementById('htmlprogress'),
 	htmlwidth = parseFloat(getComputedStyle(htmlbar).width);
 let html = setInterval(function() {
 
-	if(htmlwidth!==85){
+	if(htmlwidth!==90){
 		htmlwidth += 5;
 		htmlbar.style.width = htmlwidth + '%';
 	}
@@ -178,7 +178,7 @@ let cssbar = document.getElementById('cssprogress'),
 	csswidth = parseFloat(getComputedStyle(cssbar).width);
 let css = setInterval(function() {
 
-	if(csswidth!==80){
+	if(csswidth!==85){
 		csswidth += 5;
 		cssbar.style.width = csswidth + '%';
 	}
@@ -206,7 +206,7 @@ let jsbar = document.getElementById('jsprogress'),
 	jswidth = parseFloat(getComputedStyle(jsbar).width);
 let js = setInterval(function() {
 
-	if(jswidth!==30){
+	if(jswidth!==70){
 		jswidth += 5;
 		jsbar.style.width = jswidth + '%';
 	}
@@ -215,12 +215,26 @@ let js = setInterval(function() {
 	}
 }, 200);
 
+// ts
+let tsbar = document.getElementById('tsprogress'),
+	tswidth = parseFloat(getComputedStyle(tsbar).width);
+let ts = setInterval(function() {
+
+	if(tswidth!==50){
+		tswidth += 5;
+		tsbar.style.width = tswidth + '%';
+	}
+	else {
+		clearInterval(ts);
+	}
+}, 200);
+
 // angular
 let angbar = document.getElementById('angularprogress'),
 	angwidth = parseFloat(getComputedStyle(angbar).width);
 let ang = setInterval(function() {
 
-	if(angwidth!==45){
+	if(angwidth!==85){
 		angwidth += 5;
 		angbar.style.width = angwidth + '%';
 	}
@@ -229,12 +243,40 @@ let ang = setInterval(function() {
 	}
 }, 200);
 
+// react
+let reactbar = document.getElementById('reactprogress'),
+	reactwidth = parseFloat(getComputedStyle(reactbar).width);
+let react = setInterval(function() {
+
+	if(reactwidth!==55){
+		reactwidth += 5;
+		reactbar.style.width = reactwidth + '%';
+	}
+	else {
+		clearInterval(react);
+	}
+}, 200);
+
+// react native
+let rnbar = document.getElementById('react-nativeprogress'),
+	rnwidth = parseFloat(getComputedStyle(rnbar).width);
+let rn = setInterval(function() {
+
+	if(rnwidth!==65){
+		rnwidth += 5;
+		rnbar.style.width = rnwidth + '%';
+	}
+	else {
+		clearInterval(rn);
+	}
+}, 200);
+
 // boostrap
 let btbar = document.getElementById('btprogress'),
 	btwidth = parseFloat(getComputedStyle(btbar).width);
 let bt = setInterval(function() {
 
-	if(btwidth!==30){
+	if(btwidth!==75){
 		btwidth += 5;
 		btbar.style.width = angwidth + '%';
 	}
@@ -290,7 +332,7 @@ let mnbar = document.getElementById('mongoprogress'),
 	mnwidth = parseFloat(getComputedStyle(mnbar).width);
 let mn = setInterval(function() {
 
-	if(mnwidth!==65){
+	if(mnwidth!==75){
 		mnwidth += 5;
 		mnbar.style.width = mnwidth + '%';
 	}
