@@ -1279,3 +1279,8 @@ body::-webkit-scrollbar-thumb{
   margin-left: 5px;
 }
 
+#gallery{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

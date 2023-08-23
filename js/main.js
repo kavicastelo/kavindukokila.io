@@ -41,7 +41,7 @@
 	/*--/ Star Counter /--*/
 	$('.counter').counterUp({
 		delay: 15,
-		time: 2000
+		time: 4000
 	});
 
 	/*--/ Star Scrolling nav /--*/
@@ -117,6 +117,34 @@
 })(jQuery);
 
 //progress bars
+// node
+let nodebar = document.getElementById('nodeprogress'),
+	nodewidth = parseFloat(getComputedStyle(nodebar).width);
+let node = setInterval(function() {
+
+	if(nodewidth!==80){
+		nodewidth += 5;
+		nodebar.style.width = nodewidth + '%';
+	}
+	else {
+		clearInterval(node);
+	}
+}, 200);
+
+// express
+let expressbar = document.getElementById('expressprogress'),
+	expresswidth = parseFloat(getComputedStyle(expressbar).width);
+let express = setInterval(function() {
+
+	if(expresswidth!==80){
+		expresswidth += 5;
+		expressbar.style.width = expresswidth + '%';
+	}
+	else {
+		clearInterval(express);
+	}
+}, 200);
+
 // android
 let javabar = document.getElementById('javaprogress'),
 	javawidth = parseFloat(getComputedStyle(javabar).width);
@@ -164,7 +192,7 @@ let htmlbar = document.getElementById('htmlprogress'),
 	htmlwidth = parseFloat(getComputedStyle(htmlbar).width);
 let html = setInterval(function() {
 
-	if(htmlwidth!==90){
+	if(htmlwidth!==95){
 		htmlwidth += 5;
 		htmlbar.style.width = htmlwidth + '%';
 	}
@@ -206,7 +234,7 @@ let jsbar = document.getElementById('jsprogress'),
 	jswidth = parseFloat(getComputedStyle(jsbar).width);
 let js = setInterval(function() {
 
-	if(jswidth!==70){
+	if(jswidth!==75){
 		jswidth += 5;
 		jsbar.style.width = jswidth + '%';
 	}
@@ -215,12 +243,26 @@ let js = setInterval(function() {
 	}
 }, 200);
 
+// spring
+let springbar = document.getElementById('springprogress'),
+	springwidth = parseFloat(getComputedStyle(springbar).width);
+let spring = setInterval(function() {
+
+	if(springwidth!==70){
+		springwidth += 5;
+		springbar.style.width = springwidth + '%';
+	}
+	else {
+		clearInterval(spring);
+	}
+}, 200);
+
 // ts
 let tsbar = document.getElementById('tsprogress'),
 	tswidth = parseFloat(getComputedStyle(tsbar).width);
 let ts = setInterval(function() {
 
-	if(tswidth!==50){
+	if(tswidth!==80){
 		tswidth += 5;
 		tsbar.style.width = tswidth + '%';
 	}
@@ -332,7 +374,7 @@ let mnbar = document.getElementById('mongoprogress'),
 	mnwidth = parseFloat(getComputedStyle(mnbar).width);
 let mn = setInterval(function() {
 
-	if(mnwidth!==75){
+	if(mnwidth!==85){
 		mnwidth += 5;
 		mnbar.style.width = mnwidth + '%';
 	}
