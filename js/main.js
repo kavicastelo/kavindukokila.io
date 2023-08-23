@@ -1,35 +1,35 @@
 (function ($) {
 	"use strict";
 	let nav = $('nav');
-  let navHeight = nav.outerHeight();
-  
-  $('.navbar-toggler').on('click', function() {
-    if( ! $('#mainNav').hasClass('navbar-reduce')) {
-      $('#mainNav').addClass('navbar-reduce');
-    }
-  })
+	let navHeight = nav.outerHeight();
 
-  // Preloader
-  $(window).on('load', function () {
-    if ($('#preloader').length) {
-      $('#preloader').delay(100).fadeOut('slow', function () {
-        $(this).remove();
-      });
-    }
-  });
+	$('.navbar-toggler').on('click', function() {
+		if( ! $('#mainNav').hasClass('navbar-reduce')) {
+			$('#mainNav').addClass('navbar-reduce');
+		}
+	})
 
-  // Back to top button
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-    }
-  });
-  $('.back-to-top').click(function(){
-    $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
-    return false;
-  });
+	// Preloader
+	$(window).on('load', function () {
+		if ($('#preloader').length) {
+			$('#preloader').delay(100).fadeOut('slow', function () {
+				$(this).remove();
+			});
+		}
+	});
+
+	// Back to top button
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+			$('.back-to-top').fadeIn('slow');
+		} else {
+			$('.back-to-top').fadeOut('slow');
+		}
+	});
+	$('.back-to-top').click(function(){
+		$('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
+		return false;
+	});
 
 	/*--/ Star ScrollTop /--*/
 	$('.scrolltop-mf').on("click", function () {
@@ -41,7 +41,7 @@
 	/*--/ Star Counter /--*/
 	$('.counter').counterUp({
 		delay: 15,
-		time: 2000
+		time: 4000
 	});
 
 	/*--/ Star Scrolling nav /--*/
@@ -91,7 +91,7 @@
 
 	/*--/ Star Typed /--*/
 	if ($('.text-slider').length == 1) {
-    let typed_strings = $('.text-slider-items').text();
+		let typed_strings = $('.text-slider-items').text();
 		let typed = new Typed('.text-slider', {
 			strings: typed_strings.split(','),
 			typeSpeed: 80,
@@ -117,6 +117,34 @@
 })(jQuery);
 
 //progress bars
+// node
+let nodebar = document.getElementById('nodeprogress'),
+	nodewidth = parseFloat(getComputedStyle(nodebar).width);
+let node = setInterval(function() {
+
+	if(nodewidth!==80){
+		nodewidth += 5;
+		nodebar.style.width = nodewidth + '%';
+	}
+	else {
+		clearInterval(node);
+	}
+}, 200);
+
+// express
+let expressbar = document.getElementById('expressprogress'),
+	expresswidth = parseFloat(getComputedStyle(expressbar).width);
+let express = setInterval(function() {
+
+	if(expresswidth!==80){
+		expresswidth += 5;
+		expressbar.style.width = expresswidth + '%';
+	}
+	else {
+		clearInterval(express);
+	}
+}, 200);
+
 // android
 let javabar = document.getElementById('javaprogress'),
 	javawidth = parseFloat(getComputedStyle(javabar).width);
@@ -164,7 +192,7 @@ let htmlbar = document.getElementById('htmlprogress'),
 	htmlwidth = parseFloat(getComputedStyle(htmlbar).width);
 let html = setInterval(function() {
 
-	if(htmlwidth!==85){
+	if(htmlwidth!==95){
 		htmlwidth += 5;
 		htmlbar.style.width = htmlwidth + '%';
 	}
@@ -178,7 +206,7 @@ let cssbar = document.getElementById('cssprogress'),
 	csswidth = parseFloat(getComputedStyle(cssbar).width);
 let css = setInterval(function() {
 
-	if(csswidth!==80){
+	if(csswidth!==85){
 		csswidth += 5;
 		cssbar.style.width = csswidth + '%';
 	}
@@ -206,7 +234,7 @@ let jsbar = document.getElementById('jsprogress'),
 	jswidth = parseFloat(getComputedStyle(jsbar).width);
 let js = setInterval(function() {
 
-	if(jswidth!==30){
+	if(jswidth!==75){
 		jswidth += 5;
 		jsbar.style.width = jswidth + '%';
 	}
@@ -215,12 +243,40 @@ let js = setInterval(function() {
 	}
 }, 200);
 
+// spring
+let springbar = document.getElementById('springprogress'),
+	springwidth = parseFloat(getComputedStyle(springbar).width);
+let spring = setInterval(function() {
+
+	if(springwidth!==70){
+		springwidth += 5;
+		springbar.style.width = springwidth + '%';
+	}
+	else {
+		clearInterval(spring);
+	}
+}, 200);
+
+// ts
+let tsbar = document.getElementById('tsprogress'),
+	tswidth = parseFloat(getComputedStyle(tsbar).width);
+let ts = setInterval(function() {
+
+	if(tswidth!==80){
+		tswidth += 5;
+		tsbar.style.width = tswidth + '%';
+	}
+	else {
+		clearInterval(ts);
+	}
+}, 200);
+
 // angular
 let angbar = document.getElementById('angularprogress'),
 	angwidth = parseFloat(getComputedStyle(angbar).width);
 let ang = setInterval(function() {
 
-	if(angwidth!==45){
+	if(angwidth!==85){
 		angwidth += 5;
 		angbar.style.width = angwidth + '%';
 	}
@@ -229,12 +285,40 @@ let ang = setInterval(function() {
 	}
 }, 200);
 
+// react
+let reactbar = document.getElementById('reactprogress'),
+	reactwidth = parseFloat(getComputedStyle(reactbar).width);
+let react = setInterval(function() {
+
+	if(reactwidth!==55){
+		reactwidth += 5;
+		reactbar.style.width = reactwidth + '%';
+	}
+	else {
+		clearInterval(react);
+	}
+}, 200);
+
+// react native
+let rnbar = document.getElementById('react-nativeprogress'),
+	rnwidth = parseFloat(getComputedStyle(rnbar).width);
+let rn = setInterval(function() {
+
+	if(rnwidth!==65){
+		rnwidth += 5;
+		rnbar.style.width = rnwidth + '%';
+	}
+	else {
+		clearInterval(rn);
+	}
+}, 200);
+
 // boostrap
 let btbar = document.getElementById('btprogress'),
 	btwidth = parseFloat(getComputedStyle(btbar).width);
 let bt = setInterval(function() {
 
-	if(btwidth!==30){
+	if(btwidth!==75){
 		btwidth += 5;
 		btbar.style.width = angwidth + '%';
 	}
@@ -290,7 +374,7 @@ let mnbar = document.getElementById('mongoprogress'),
 	mnwidth = parseFloat(getComputedStyle(mnbar).width);
 let mn = setInterval(function() {
 
-	if(mnwidth!==65){
+	if(mnwidth!==85){
 		mnwidth += 5;
 		mnbar.style.width = mnwidth + '%';
 	}

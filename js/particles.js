@@ -2,13 +2,13 @@
     let canvas = document.createElement("canvas"), //создаю эл-т canvas
         ctx = canvas.getContext("2d"), // генерирую контекст рисования
         w = (canvas.width = innerWidth),
-        h = (canvas.height = innerHeight),
+        h = (canvas.height = innerHeight*.75),
         particles = [], // массив частиц
         properties = {
             bgColor: "#1b1b1b",
             particleColor: "#00ff00",
             particleRadius: 3, // радиус частицы
-            particleCount: 60,
+            particleCount: 30,
             particleMaxVelocity: 0.5, // скорость(исп. для генерации скорости по х и у)
             lineLength: 170,
             particleLife: 10 //жизненный цикл частичек(в сек)
