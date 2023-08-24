@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexiart-Docs</title>
+    <!-- Bootstrap CSS File -->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @keyframes popup {
+            0% {
+                transform: scale(1, 1);
+            }
+            50% {
+                transform: scale(1.5, 1.5);
+            }
+            100% {
+                transform: scale(1, 1);
+                background-image: radial-gradient(circle at 50% 50%, #13e8e9, #1b85c9, #3071a9);
+            }
+        }
+
+        .click{
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 10px 25px;
+            animation: popup 1s infinite;
+            cursor: pointer;
+        }
+        .click-text{
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="d-flex align-items-center" style="width: 100%; height: 100px">
+        <a href="https://flexi-art.com/#/home"><button class="click">Click Here</button></a>
+        <p class="click-text"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to watch the deployment...</p>
+    </div>
+    <div class="row">
+        <div class="col-md-6" style="margin-top: 3vw">
+            <h1><u>Technical Documentation</u></h1>
+            <h2>Introduction</h2>
+            <p>This technical documentation provides an overview of the FlexiArt web application, an enterprise-level
+                software company website. The application is built using Angular 15 for the frontend and Node.js with
+                Express.js for the backend. It includes various features such as user authentication, live chat support,
+                AI chatbot integration, two-step verification, manual backups, and MongoDB database integration. The
+                frontend is hosted on Netlify, while the backend is hosted on Render, with a MongoDB Atlas cluster for
+                the database.</p>
+
+            <h2>Frontend</h2>
+            <h3>Framework and Dependencies</h3>
+            <ul>
+                <li>Angular 15 is used for building the frontend of the application.</li>
+                <li>The application relies on several Angular packages for features such as animations, forms, routing,
+                    material design, and more.
+                </li>
+                <li>Third-party libraries such as Font Awesome, ngx-cookie-service, ng-image-slider, and ng-particles
+                    are integrated to enhance the user experience.
+                </li>
+            </ul>
+
+            <h3>Routing</h3>
+            <p>The application employs Angular's routing mechanism to create different pages for various sections. -A
+                routing module defines the paths and corresponding components for each page. -The routing structure
+                includes pages for home, about, services, works, technologies, contact, FAQ, blog, user dashboard,
+                login, administration, chatbot, and more.</p>
+
+            <h3>User Interaction</h3>
+            <ul>
+                <li>The frontend offers a variety of user interaction components, including image sliders, star ratings,
+                    chatbots, and more.
+                </li>
+                <li>It utilizes Angular's reactive forms for handling user inputs and form submissions.</li>
+            </ul>
+
+            <h3>Hosting</h3>
+            <ul>
+                <li>The frontend is hosted on Netlify and connected to a GoDaddy domain.</li>
+            </ul>
+
+            <h2>Backend</h2>
+            <h3>Framework and dependencies</h3>
+            <ul>
+                <li>The backend is developed using Node.js with Express.js, providing a RESTful API for the frontend to
+                    communicate with.
+                </li>
+                <li>Key dependencies include Express, Mongoose for MongoDB interaction, body-parser for parsing request
+                    bodies, cors for enabling cross-origin requests, and jsonwebtoken for user authentication.
+                </li>
+            </ul>
+
+            <h3>API Endpoints</h3>
+            <ul>
+                <li>The backend defines various API endpoints to handle user registration, contact requests, dialog flow
+                    interactions, feedback submission, gallery management, offers, subscriptions, email sending, and
+                    more.
+                </li>
+                <li>Each API endpoint corresponds to a specific route and functionality.</li>
+            </ul>
+
+            <h3>Security</h3>
+            <ul>
+                <li>The application implements user authentication using JSON Web Tokens (JWT) for securing API
+                    endpoints.
+                </li>
+                <li>Two-step verification is integrated using the speakeasy library, allowing users to enable two-factor
+                    authentication through an authenticator app.
+                </li>
+                <li>The backend utilizes bcrypt for hashing sensitive data such as passwords.</li>
+            </ul>
+
+            <h3>Backup</h3>
+            <ul>
+                <li>Manual backups of the application's data are supported using the mongodb-backup library.</li>
+                <li>A backup route is defined to trigger data backups when needed.</li>
+            </ul>
+
+            <h3>Sitemap</h3>
+            <ul>
+                <li>A sitemap generation feature is included to enhance search engine optimization (SEO).</li>
+                <li>The application generates an XML sitemap using the sitemap package to list URLs and their
+                    changefrequency and priority.
+                </li>
+            </ul>
+
+            <h3>Hosting</h3>
+            <ul>
+                <li>The backend is hosted on Render, providing a platform for deploying and managing Node.js
+                    applications.
+                </li>
+            </ul>
+
+            <h2>Database</h2>
+            <ul>
+                <li>The application's data is stored in a MongoDB database.</li>
+                <li>A MongoDB Atlas cluster is used to manage the database, offering scalability and data redundancy.
+                </li>
+                <li>Mongoose is employed as an Object Data Modeling (ODM) library to interact with the MongoDB
+                    database.
+                </li>
+            </ul>
+
+            <h2>Deployment</h2>
+            <ul>
+                <li>The frontend is deployed on Netlify, connecting to a GoDaddy domain for accessibility.</li>
+                <li>The backend is deployed on Render, providing a scalable environment for the Node.js application.
+                </li>
+            </ul>
+
+            <h2>Additional Features</h2>
+            <ul>
+                <li>The application includes live chat support using Tawk when agents are online and an AI chatbot for
+                    handling inquiries when agents are unavailable.
+                </li>
+                <li>Email addresses, login details, and live chat data are stored using cookies.</li>
+                <li>The backend manages email sending, including features such as sending email templates and
+                    newsletters.
+                </li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>This technical documentation provides an overview of the FlexiArt web application, detailing its
+                architecture, frontend and backend technologies, features, deployment, and more. It serves as a guide
+                for understanding the application's structure and functionality, aiding in maintenance, updates, and
+                further development. If you have any further questions or need more specific information, please don't
+                hesitate to ask.</p>
+
+            <p>Contact : <a href="mailto:kavindu.kokila.info@gmail.com?subject=[GitHub] Flexiart Project Problems">Kavindu
+                Kokila</a></p>
+            <hr>
+        </div>
+
+        <div class="col-md-6" style="margin-top: 3vw">
+            <h1><u>Database Schema Documentation</u></h1>
+            <p>This documentation outlines the database schema used in the FlexiArt web application. The application
+                relies on MongoDB for data storage and retrieval. Here are the database schema models and their
+                respective fields:</p>
+            <!-- Contact Schema -->
+            <h2>Contact Schema</h2>
+            <p><strong>Model Name:</strong> <code>Contact</code></p>
+            <p><strong>Description:</strong> Represents user contact form submissions.</p>
+            <table class="table table-hover" style="width: 100%">
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>fullName</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Full name of the user</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>User's email address</td>
+                </tr>
+                <tr>
+                    <td>msg</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Message from the user</td>
+                </tr>
+            </table>
+
+            <h2>Dialogflow Schema</h2>
+            <p><strong>Model Name:</strong> Not stored in the database</p>
+            <p><strong>Description:</strong> Handles interactions with the Dialogflow bot.</p>
+            <table class="table table-hover" style="width: 100%">
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>sessionId</td>
+                    <td>String</td>
+                    <td>No</td>
+                    <td>Unique session identifier</td>
+                </tr>
+                <tr>
+                    <td>runIntent</td>
+                    <td>Function</td>
+                    <td>Yes</td>
+                    <td>Sends queries to Dialogflow</td>
+                </tr>
+            </table>
+
+            <h2>Feedback Schema</h2>
+            <p><strong>Model Name:</strong> <code>Feedbacks</code></p>
+            <p><strong>Description:</strong> Represents user contact form submissions.</p>
+            <table class="table table-hover" style="width: 100%">
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>fullName</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Full name of the user</td>
+                </tr>
+                <tr>
+                    <td>msg</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Feedback message</td>
+                </tr>
+                <tr>
+                    <td>date</td>
+                    <td>Date</td>
+                    <td>Yes</td>
+                    <td>Date of feedback submission</td>
+                </tr>
+            </table>
+
+            <h2>Gallery Schema</h2>
+            <p><strong>Model Name:</strong> <code>Gallery</code></p>
+            <p><strong>Description:</strong> Represents images in the gallery.</p>
+            <table class="table table-hover" style="width: 100%">
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>src</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Image source path</td>
+                </tr>
+                <tr>
+                    <td>thumb</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Thumbnail image source path</td>
+                </tr>
+                <tr>
+                    <td>caption</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Image caption</td>
+                </tr>
+            </table>
+
+            <h2>Offers Schema</h2>
+            <p><strong>Model Name:</strong> <code>Offers</code></p>
+            <p><strong>Description:</strong> Represents available offers.</p>
+            <table class="table table-hover" style="width: 100%">
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>src</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Image source path</td>
+                </tr>
+                <tr>
+                    <td>date</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Date of the offer</td>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Offer identifier</td>
+                </tr>
+            </table>
+
+            <h2>Project Count Schema</h2>
+            <p><strong>Model Name:</strong> <code>Project-Count</code></p>
+            <p><strong>Description:</strong> Represents project, client, and solution counts.</p>
+            <table class="table table-hover" style="width: 100%">
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>clients</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Number of clients</td>
+                </tr>
+                <tr>
+                    <td>projects</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Number of projects</td>
+                </tr>
+                <tr>
+                    <td>solutions</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Number of solutions</td>
+                </tr>
+            </table>
+
+            <h2>Register Schema</h2>
+            <p><strong>Model Name:</strong> <code>Users</code></p>
+            <p><strong>Description:</strong> Represents registered users.</p>
+            <table class="table table-hover" style="width: 100%">
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>User's email address</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>User's password</td>
+                </tr>
+                <tr>
+                    <td>fullname</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>Full name of the user</td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>User's phone number</td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>User's address</td>
+                </tr>
+                <tr>
+                    <td>verified</td>
+                    <td>Boolean</td>
+                    <td>No</td>
+                    <td>Verification status</td>
+                </tr>
+            </table>
+            <p>These schemas represent the data models used in the FlexiArt web application. Each schema defines the
+                structure of its respective data type, including field names, data types, and whether the fields are
+                required or not. This organized structure enables efficient data management and retrieval throughout the
+                application's lifecycle.</p>
+            <p>For further details or queries related to the database schemas, feel free to contact us.</p>
+            <hr>
+        </div>
+
+        <div class="col-md-6" style="margin-top: 3vw">
+            <h1><u>API Documentation</u></h1>
+            <h2>Introduction</h2>
+            <p>This API documentation provides detailed information about the APIs used in the FlexiArt web application.
+                These APIs facilitate communication between the frontend and backend, enabling various functionalities
+                such
+                as user registration, contact requests, authentication, data retrieval, email sending, and more.</p>
+            <h2>Base URL</h2>
+            <p>The base URL for accessing the API endpoints is: <code>&lt;url&gt;/api/v1/</code></p>
+            <h2>Authentication</h2>
+            <p>The application uses JSON Web Tokens (JWT) for user authentication. To access protected endpoints,
+                include
+                the JWT token in the Authorization header using the Bearer scheme.</p>
+            <h2>API Endpoints</h2>
+            <!-- User Registration -->
+            <h3>User Registration</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/user/register</code></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Description:</strong> Registers a new user account.</p>
+            <p><strong>Request Body:</strong></p>
+            <pre>
+{
+  "username": "exampleUser",
+  "email": "user@example.com",
+  "password": "userPassword"
+}
+  </pre>
+            <p><strong>Response:</strong> Returns a success message if registration is successful.</p>
+            <!-- User Login -->
+            <h3>User Login</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/user/login</code></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Description:</strong> Logs in a registered user.</p>
+            <p><strong>Request Body:</strong></p>
+            <pre>
+{
+  "email": "user@example.com",
+  "password": "userPassword"
+}
+  </pre>
+            <p><strong>Response:</strong> Returns a JWT token upon successful login.</p>
+
+            <h3>Contact Form Submission</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/flexiart/contact</code></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Description:</strong> Handles user contact form submissions.</p>
+            <p><strong>Request Body:</strong></p>
+            <pre>
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "message": "Hello, FlexiArt team!"
+}
+  </pre>
+            <p><strong>Response:</strong> Returns a success message if the message is sent successfully.</p>
+
+            <h3>Dialog Flow Interaction</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/dialogFlow</code></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Description:</strong> Sends user messages to a Dialog Flow bot for processing.</p>
+            <p><strong>Request Body:</strong></p>
+            <pre>
+{
+  "message": "How can you help me?"
+}
+  </pre>
+            <p><strong>Response:</strong> Returns a response from the Dialog Flow bot.</p>
+
+            <h3>Feedback Submission</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/feedback</code></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Description:</strong> Allows users to submit feedback.</p>
+            <p><strong>Request Body:</strong></p>
+            <pre>
+{
+  "email": "user@example.com",
+  "feedback": "Great website!"
+}
+  </pre>
+            <p><strong>Response:</strong> Returns a success message if feedback is submitted successfully.</p>
+
+            <h3>Gallery Management</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/gallery</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Retrieves a list of gallery items</p>
+            <p><strong>Response:</strong> Returns a list of gallery items with details.</p>
+
+            <h3>Offers Retrieval</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/offers</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Retrieves available offers.</p>
+            <p><strong>Response:</strong> Returns a list of offers with details.</p>
+
+            <h3>Subscription List Retrieval</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/subscribe</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Retrieves the list of subscribers.</p>
+            <p><strong>Response:</strong> Returns a list of subscriber emails.</p>
+
+            <h3>Email Sending</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/sendMail</code></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Description:</strong> Sends emails for various purposes.</p>
+            <p><strong>Request Body:</strong></p>
+            <pre>
+{
+  "to": "recipient@example.com",
+  "subject": "Welcome to FlexiArt",
+  "html": "&lt;p&gt;Welcome to FlexiArt. We're excited to have you on board!&lt;/p&gt;"
+}
+  </pre>
+            <p><strong>Response:</strong> Returns a success message if the email is sent successfully.</p>
+
+            <h3>Manual Backup</h3>
+            <p><strong>Endpoint:</strong> <code>/api/v1/backup</code></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Description:</strong> Triggers a manual backup of the application data.</p>
+            <h2>Conclusion</h2>
+            <p>This API documentation provides a comprehensive overview of the APIs used in the FlexiArt web
+                application. Each API endpoint is described with its purpose, request structure, response format, and
+                authentication requirements. Properly utilizing these APIs will enable the frontend and backend
+                components of the application to work seamlessly together, providing users with a robust and
+                feature-rich experience. If you have any further questions or need assistance, please feel free to reach
+                out.</p>
+            <hr>
+        </div>
+
+        <div class="col-md-6"></div>
+    </div>
+</div>
+</body>
+</html>
