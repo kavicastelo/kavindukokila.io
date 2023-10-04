@@ -6,7 +6,7 @@
         particles = [], // массив частиц
         properties = {
             bgColor: "#1b1b1b",
-            particleColor: "#00ff00",
+            particleColor: "#48abac",
             particleRadius: 3, // радиус частицы
             particleCount: 30,
             particleMaxVelocity: 0.5, // скорость(исп. для генерации скорости по х и у)
@@ -93,7 +93,7 @@
                 if (length < properties.lineLength) {
                     opacity = 1 - length / properties.lineLength; // чем длиннее расстояние, тем меньше значение прозрачности
                     ctx.lineWidth = "0.5";
-                    ctx.strokeStyle = `rgba(46, 204, 113, ${opacity} )`;
+                    ctx.strokeStyle = `rgba(46, 113, 204, ${opacity} )`;
                     ctx.beginPath();
                     ctx.moveTo(x1, y1);
                     ctx.lineTo(x2, y2);
