@@ -1365,3 +1365,96 @@ body::-webkit-scrollbar-thumb {
 .btn-1:focus{
     outline: none;
 }
+
+
+.card-container{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    z-index:2;
+    padding-bottom: 2vw;
+    background-image:url(../img/work-bg.jpg);
+    background-attachment:fixed;
+    background-size:cover;
+    background-position:center center;
+}
+.card-container .card{
+    vertical-align:top;
+    width:87%;
+    min-height: 450px;
+    position:relative;
+    margin:30px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+    border-radius:25px;
+    background-color:rgba(255,255,255, 0.1);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    backdrop-filter:blur(5px);
+    text-align:center;
+}
+.card .content{
+    padding:20px;
+    transition:0.8s all ease;
+    color:#ccc;
+    transform:translateY(200px);
+    opacity:0;
+}
+.card:hover .content{
+    transform:translateY(0px);
+    opacity:1;
+}
+.card img{
+    position:absolute;
+    /*filter: invert(82%) sepia(60%) saturate(2929%) hue-rotate(353deg) brightness(105%) contrast(103%);*/
+    filter: grayscale(4%) sepia(5%) blur(1px) hue-rotate(32deg) saturate(129%) contrast(225%) invert(1%) drop-shadow(-12px 10px 36px #3d93d7);
+    width:100%;
+    top:50px;
+    opacity:0.5;
+    z-index:-1;
+}
+h1{
+    color:#fff;
+    text-align:center;
+    z-index:9;
+    position:relative;
+    margin-bottom:-20px;
+    padding-bottom:0;
+    padding-top:20px;
+    font-weight:400;
+}
+.card .content h2{
+    color:#fff;
+    font-weight:400;
+}
+.card .content a{
+    display:inline-block;
+    margin-top:20px;
+    text-decoration:none;
+    padding:8px 30px 11px;
+    border:2px solid #fff;
+    text-transform:uppercase;
+    color:#fff;
+    border-radius:50px;
+    box-shadow: 0px 5px 50px rgba(0,0,0,0.8);
+    transition:0.8s all ease;
+}
+.card .content a:hover{
+    background: #48abec;
+}
+
+.main-bg{
+    position: relative;
+}
+.main-bg:before{
+    content:"";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}

@@ -1,11 +1,24 @@
 (function () {
+    let height;
+
+    if (window.innerWidth >= 770){
+        height = window.innerHeight*.5 + 120;
+    }else if(window.innerWidth >= 525 && window.innerWidth < 770){
+        height = window.innerHeight*.9;
+    }else if(window.innerWidth >= 450 && window.innerWidth < 525){
+        height = window.innerHeight*.82;
+    }else{
+        height = window.innerHeight*.75;
+    }
+
     let canvas = document.createElement("canvas"), //создаю эл-т canvas
         ctx = canvas.getContext("2d"), // генерирую контекст рисования
         w = (canvas.width = innerWidth),
-        h = (canvas.height = innerHeight*.75),
+        // h = (canvas.height = innerHeight*.75),
+        h = (canvas.height = height),
         particles = [], // массив частиц
         properties = {
-            bgColor: "#1b1b1b",
+            bgColor: "#000",
             particleColor: "#48abac",
             particleRadius: 3, // радиус частицы
             particleCount: 30,
