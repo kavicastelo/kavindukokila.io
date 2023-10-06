@@ -8,266 +8,248 @@
     <title>Job-seeker-Docs</title>
     <!-- Bootstrap CSS File -->
     <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        @keyframes popup {
-            0% {
-                transform: scale(1, 1);
-            }
-            50% {
-                transform: scale(1.5, 1.5);
-            }
-            100% {
-                transform: scale(1, 1);
-                background-image: radial-gradient(circle at 50% 50%, #13e8e9, #1b85c9, #3071a9);
-            }
-        }
-
-        .click {
-            background-color: #007bff;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            padding: 10px 25px;
-            animation: popup 1s infinite;
-            cursor: pointer;
-        }
-
-        .click-text {
-            font-size: 24px;
-            margin: 0;
-            padding: 0;
-            font-weight: 700;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 <div class="container">
-    <div class="d-flex align-items-center" style="width: 100%; height: 100px">
-        <a href="https://seeker-by-kavi.netlify.app/">
-            <button class="click">Click Here</button>
-        </a>
-        <p class="click-text"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to watch the deployment...</p>
+    <div class="row" style="padding: 30px">
+        <div class="col-sm-12 col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="#technical">Technical Documentation</a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="#database">Database Documentation</a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="#api">API Documentation</a>
+            </div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-md-6" style="margin-top: 3vw">
-            <h1>JobSeeker</h1>
-            <p>JobSeeker is a web application developed as a university assignment. It is designed to facilitate the
-                interaction between job seekers and consultants. The project uses Angular 15 for the frontend and Spring
-                Boot 3 for the backend.</p>
-            <h2><a href="https://seeker-by-kavi.netlify.app/">Demo</a></h2>
-            <h2>Table of Contents</h2>
-            <ul>
-                <li><a href="#technologies">Technologies</a></li>
-                <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#usage">Usage</a></li>
-                <li><a href="#login-credentials">Login Credentials</a></li>
-                <li><a href="#functionality">Functionality</a></li>
-                <li><a href="#deployment">Deployment</a></li>
-                <li><a href="#security">Security</a></li>
-                <li><a href="#local-setup">Local Setup</a></li>
-            </ul>
+    <div class="d-flex flex-md-row flex-column-reverse">
+        <div class="main-container">
+            <div class="col-12" id="technical" style="margin-top: 3vw">
+                <h1>JobSeeker</h1>
+                <p>JobSeeker is a web application developed as a university assignment. It is designed to facilitate the
+                    interaction between job seekers and consultants. The project uses Angular 15 for the frontend and Spring
+                    Boot 3 for the backend.</p>
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#login-credentials">Login Credentials</a></li>
+                    <li><a href="#functionality">Functionality</a></li>
+                    <li><a href="#deployment">Deployment</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#local-setup">Local Setup</a></li>
+                </ul>
 
-            <h2 id="technologies">Technologies</h2>
-            <ul>
-                <li>Frontend: Angular 15</li>
-                <li>Backend: Spring Boot 3</li>
-                <li>Database: MongoDB</li>
-            </ul>
+                <h2 id="technologies">Technologies</h2>
+                <ul>
+                    <li>Frontend: Angular 15</li>
+                    <li>Backend: Spring Boot 3</li>
+                    <li>Database: MongoDB</li>
+                </ul>
 
-            <h2 id="getting-started">Getting Started</h2>
-            <p>To get started, follow the steps below:</p>
-            <ol>
-                <li>Clone this repository.</li>
-                <li>Configure environment files in both the frontend and backend.</li>
-                <li>Install required dependencies.</li>
-                <li>Run the frontend and backend applications.</li>
-            </ol>
+                <h2 id="getting-started">Getting Started</h2>
+                <p>To get started, follow the steps below:</p>
+                <ol>
+                    <li>Clone this repository.</li>
+                    <li>Configure environment files in both the frontend and backend.</li>
+                    <li>Install required dependencies.</li>
+                    <li>Run the frontend and backend applications.</li>
+                </ol>
 
-            <h2 id="usage">Usage</h2>
-            <p>The application serves as a platform for job seekers to connect with consultants. Users can filter job
-                listings based on country, job category, consultant name, and job role. Follow these steps to make an
-                appointment:</p>
-            <ol>
-                <li>Choose a country (e.g., American Samoa).</li>
-                <li>Select a job category (e.g., Art & Design Related).</li>
-                <li>Choose a consultant (e.g., Kavi Castelo).</li>
-                <li>Select a job role under the chosen category.</li>
-            </ol>
+                <h2 id="usage">Usage</h2>
+                <p>The application serves as a platform for job seekers to connect with consultants. Users can filter job
+                    listings based on country, job category, consultant name, and job role. Follow these steps to make an
+                    appointment:</p>
+                <ol>
+                    <li>Choose a country (e.g., American Samoa).</li>
+                    <li>Select a job category (e.g., Art & Design Related).</li>
+                    <li>Choose a consultant (e.g., Kavi Castelo).</li>
+                    <li>Select a job role under the chosen category.</li>
+                </ol>
 
-            <h2 id="login-credentials">Login Credentials</h2>
-            <h3>Reception Panel:</h3>
-            <ul>
-                <li>Username: admin@gmail.com</li>
-                <li>Password: Admin@12345</li>
-            </ul>
-            <p>You can use consultants credentials too</p>
-            <h3>Consultant Login (Sign In):</h3>
-            <ul>
-                <li>Username: kavindu123450@gmail.com</li>
-                <li>Password: 123456</li>
-                <li>Username: kkavindu221@gmail.com</li>
-                <li>Password: 123456</li>
-            </ul>
-            <h3>Consultant Apply:</h3>
-            <p>nav bar > become a consultant or top bar > become a consultant > apply now</p>
+                <h2 id="login-credentials">Login Credentials</h2>
+                <h3>Reception Panel:</h3>
+                <ul>
+                    <li>Username: admin@gmail.com</li>
+                    <li>Password: Admin@12345</li>
+                </ul>
+                <p>You can use consultants credentials too</p>
+                <h3>Consultant Login (Sign In):</h3>
+                <ul>
+                    <li>Username: kavindu123450@gmail.com</li>
+                    <li>Password: 123456</li>
+                    <li>Username: kkavindu221@gmail.com</li>
+                    <li>Password: 123456</li>
+                </ul>
+                <h3>Consultant Apply:</h3>
+                <p>nav bar > become a consultant or top bar > become a consultant > apply now</p>
 
-            <h2 id="functionality">Functionality</h2>
-            <p>CRUD operations for job listings.</p>
-            <p>Reception and consultant login with shared credentials.</p>
-            <p>Filter function on the homepage for searching job listings.</p>
-            <p>Authenticated access for secure operations.</p>
-            <p>Described only main function. Many more functions to have consultant and reception panels.</p>
+                <h2 id="functionality">Functionality</h2>
+                <p>CRUD operations for job listings.</p>
+                <p>Reception and consultant login with shared credentials.</p>
+                <p>Filter function on the homepage for searching job listings.</p>
+                <p>Authenticated access for secure operations.</p>
+                <p>Described only main function. Many more functions to have consultant and reception panels.</p>
 
-            <h2 id="deployment">Deployment</h2>
-            <p>Frontend: Hosted on Netlify (<a href="https://seeker-by-kavi.netlify.app/">https://seeker-by-kavi.netlify.app/</a>)
-            </p>
-            <p>Backend: Hosted on Render (<a href="https://jobseeker-ftq4.onrender.com/">https://jobseeker-ftq4.onrender.com/</a>)
-            </p>
-            <p>Note: Backend loading time might be up to 30 seconds due to the free hosting plan.</p>
+                <h2 id="deployment">Deployment</h2>
+                <p>Frontend: Hosted on Netlify (<a href="https://seeker-by-kavi.netlify.app/">https://seeker-by-kavi.netlify.app/</a>)
+                </p>
+                <p>Backend: Hosted on Render (<a href="https://jobseeker-ftq4.onrender.com/">https://jobseeker-ftq4.onrender.com/</a>)
+                </p>
+                <p>Note: Backend loading time might be up to 30 seconds due to the free hosting plan.</p>
 
-            <h2 id="security">Security</h2>
-            <p>Authentication and authorization mechanisms are integrated.</p>
-            <p>CORS is configured to allow frontend access to backend APIs.</p>
-            <p>Reception and consultant login credentials are shared for educational purposes.</p>
-            <p>Passwords are not encrypted for simplicity and educational purposes.</p>
+                <h2 id="security">Security</h2>
+                <p>Authentication and authorization mechanisms are integrated.</p>
+                <p>CORS is configured to allow frontend access to backend APIs.</p>
+                <p>Reception and consultant login credentials are shared for educational purposes.</p>
+                <p>Passwords are not encrypted for simplicity and educational purposes.</p>
 
-            <h2 id="local-setup">Local Setup</h2>
-            <p>To run the project locally:</p>
-            <ol>
-                <li>Clone the repository.</li>
-                <li>Checkout the <code>frontend</code> branch and configure the environment files as instructed.</li>
-                <li>Checkout the <code>backend</code> branch and configure the CORS settings and application.properties.
-                </li>
-                <li>Run the frontend and backend applications.</li>
-            </ol>
-            <p>Remember to wait for a minute after loading the website for optimal data transfer.</p>
+                <h2 id="local-setup">Local Setup</h2>
+                <p>To run the project locally:</p>
+                <ol>
+                    <li>Clone the repository.</li>
+                    <li>Checkout the <code>frontend</code> branch and configure the environment files as instructed.</li>
+                    <li>Checkout the <code>backend</code> branch and configure the CORS settings and application.properties.
+                    </li>
+                    <li>Run the frontend and backend applications.</li>
+                </ol>
+                <p>Remember to wait for a minute after loading the website for optimal data transfer.</p>
 
-            <p>Feel free to explore and contribute to this educational project! For any questions or issues, contact <a
-                    href="mailto:kavindu.kokila.info@gmail.com?subject=[GitHub] JobSeeker Project Problems">Kavindu
-                Kokila</a>.</p>
-            <hr>
-        </div>
-        <div class="col-md-6" style="margin-top: 3vw">
-            <h1>Database Schema Documentation</h1>
+                <p>Feel free to explore and contribute to this educational project! For any questions or issues, contact <a
+                        href="mailto:kavindu.kokila.info@gmail.com?subject=[GitHub] JobSeeker Project Problems">Kavindu
+                    Kokila</a>.</p>
+                <hr>
+            </div>
 
-            <h2>Overview</h2>
-            <p>This documentation provides an overview of the database schema for the Job Seeker application. It
-                describes the structure, entities, and relationships in the database.</p>
+            <div class="col-12" id="database" style="margin-top: 3vw">
+                <h1>Database Schema Documentation</h1>
 
-            <h2>Entity Descriptions</h2>
+                <h2>Overview</h2>
+                <p>This documentation provides an overview of the database schema for the Job Seeker application. It
+                    describes the structure, entities, and relationships in the database.</p>
 
-            <h3>Appointment</h3>
-            <p>The Appointment entity represents an appointment made by a job seeker with a consultant. It stores
-                information about the appointment, including date, location, consultant details, and approval
-                status.</p>
-            <ul>
-                <li><code>id</code> (String): Unique identifier for the appointment.</li>
-                <li><code>country</code> (String): The country where the appointment is scheduled.</li>
-                <li><code>category</code> (String): The category of the appointment.</li>
-                <li><code>consultant</code> (String): The consultant assigned to the appointment.</li>
-                <li><code>jobRole</code> (String): The job role associated with the appointment.</li>
-                <li><code>name</code> (String): The name of the individual making the appointment.</li>
-                <li><code>email</code> (String): The email address of the individual making the appointment.</li>
-                <li><code>date</code> (String): The date and time of the appointment.</li>
-                <li><code>approved</code> (boolean): Flag indicating whether the appointment is approved.</li>
-            </ul>
+                <h2>Entity Descriptions</h2>
 
-            <h3>Consultant</h3>
-            <p>The Consultant entity represents a consultant who provides guidance and assistance to job seekers. It
-                stores information about the consultant, including their contact details, expertise, and
-                availability.</p>
-            <ul>
-                <li><code>country</code> (String): The country where the consultant is located.</li>
-                <li><code>jobCategory</code> (String): The category of jobs the consultant specializes in.</li>
-                <li><code>jobRole</code> (Array): An array of job roles the consultant can assist with.</li>
-                <li><code>name</code> (String): The name of the consultant.</li>
-                <li><code>email</code> (String): The email address of the consultant.</li>
-                <li><code>phone</code> (String): The contact phone number of the consultant.</li>
-                <li><code>address</code> (String): The address of the consultant.</li>
-                <li><code>unavailableDates</code> (List): A list of dates when the consultant is unavailable.</li>
-                <li><code>portfolio</code> (String): The consultant's portfolio or summary of expertise.</li>
-                <li><code>verified</code> (Boolean): Flag indicating whether the consultant's account is verified.</li>
-            </ul>
+                <h3>Appointment</h3>
+                <p>The Appointment entity represents an appointment made by a job seeker with a consultant. It stores
+                    information about the appointment, including date, location, consultant details, and approval
+                    status.</p>
+                <ul>
+                    <li><code>id</code> (String): Unique identifier for the appointment.</li>
+                    <li><code>country</code> (String): The country where the appointment is scheduled.</li>
+                    <li><code>category</code> (String): The category of the appointment.</li>
+                    <li><code>consultant</code> (String): The consultant assigned to the appointment.</li>
+                    <li><code>jobRole</code> (String): The job role associated with the appointment.</li>
+                    <li><code>name</code> (String): The name of the individual making the appointment.</li>
+                    <li><code>email</code> (String): The email address of the individual making the appointment.</li>
+                    <li><code>date</code> (String): The date and time of the appointment.</li>
+                    <li><code>approved</code> (boolean): Flag indicating whether the appointment is approved.</li>
+                </ul>
 
-            <h3>JobSeeker</h3>
-            <p>The JobSeeker entity represents an individual seeking assistance and guidance in their job search. It
-                stores their contact information and any messages they wish to convey.</p>
-            <ul>
-                <li><code>email</code> (String): The email address of the job seeker.</li>
-                <li><code>message</code> (String): A message from the job seeker regarding their needs or inquiries.
-                </li>
-            </ul>
+                <h3>Consultant</h3>
+                <p>The Consultant entity represents a consultant who provides guidance and assistance to job seekers. It
+                    stores information about the consultant, including their contact details, expertise, and
+                    availability.</p>
+                <ul>
+                    <li><code>country</code> (String): The country where the consultant is located.</li>
+                    <li><code>jobCategory</code> (String): The category of jobs the consultant specializes in.</li>
+                    <li><code>jobRole</code> (Array): An array of job roles the consultant can assist with.</li>
+                    <li><code>name</code> (String): The name of the consultant.</li>
+                    <li><code>email</code> (String): The email address of the consultant.</li>
+                    <li><code>phone</code> (String): The contact phone number of the consultant.</li>
+                    <li><code>address</code> (String): The address of the consultant.</li>
+                    <li><code>unavailableDates</code> (List): A list of dates when the consultant is unavailable.</li>
+                    <li><code>portfolio</code> (String): The consultant's portfolio or summary of expertise.</li>
+                    <li><code>verified</code> (Boolean): Flag indicating whether the consultant's account is verified.</li>
+                </ul>
 
-            <h3>loginInfo</h3>
-            <p>The loginInfo entity stores authentication information for users of the application.</p>
-            <ul>
-                <li><code>email</code> (String): The email address associated with the user account.</li>
-                <li><code>password</code> (String): The password associated with the user account.</li>
-            </ul>
+                <h3>JobSeeker</h3>
+                <p>The JobSeeker entity represents an individual seeking assistance and guidance in their job search. It
+                    stores their contact information and any messages they wish to convey.</p>
+                <ul>
+                    <li><code>email</code> (String): The email address of the job seeker.</li>
+                    <li><code>message</code> (String): A message from the job seeker regarding their needs or inquiries.
+                    </li>
+                </ul>
 
-            <h2>Entity Relationships</h2>
-            <ul>
-                <li><code>Appointment</code> and <code>Consultant</code>: An appointment is associated with a specific
-                    consultant. The <code>consultant</code> field in the <code>Appointment</code> entity references a
-                    consultant's details.
-                </li>
-                <li><code>Appointment</code> and <code>JobSeeker</code>: An appointment is requested by a job seeker.
-                    The <code>name</code> and <code>email</code> fields in the <code>Appointment</code> entity are
-                    linked to the <code>JobSeeker</code> entity.
-                </li>
-                <li><code>Consultant</code> and <code>JobSeeker</code>: Consultants may interact with job seekers
-                    through appointments. The <code>JobSeeker</code> entity is not directly linked to the <code>Consultant</code>
-                    entity.
-                </li>
-            </ul>
+                <h3>loginInfo</h3>
+                <p>The loginInfo entity stores authentication information for users of the application.</p>
+                <ul>
+                    <li><code>email</code> (String): The email address associated with the user account.</li>
+                    <li><code>password</code> (String): The password associated with the user account.</li>
+                </ul>
 
-            <h2>Conclusion</h2>
-            <p>This documentation provides an overview of the database schema for the Job Seeker application. It
-                describes the entities, attributes, and relationships that define the structure of the database.
-                Understanding this schema is crucial for maintaining and developing the application's functionality.</p>
+                <h2>Entity Relationships</h2>
+                <ul>
+                    <li><code>Appointment</code> and <code>Consultant</code>: An appointment is associated with a specific
+                        consultant. The <code>consultant</code> field in the <code>Appointment</code> entity references a
+                        consultant's details.
+                    </li>
+                    <li><code>Appointment</code> and <code>JobSeeker</code>: An appointment is requested by a job seeker.
+                        The <code>name</code> and <code>email</code> fields in the <code>Appointment</code> entity are
+                        linked to the <code>JobSeeker</code> entity.
+                    </li>
+                    <li><code>Consultant</code> and <code>JobSeeker</code>: Consultants may interact with job seekers
+                        through appointments. The <code>JobSeeker</code> entity is not directly linked to the <code>Consultant</code>
+                        entity.
+                    </li>
+                </ul>
 
-            <h2>References</h2>
-            <p>Application Source Code and Entity Definitions</p>
-            <hr>
-        </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-6" style="margin-top: 3vw">
-            <h1>Job Seeker Backend API Documentation</h1>
-            <p>This document provides information about the APIs exposed by the Job Seeker backend system. These APIs
-                allow you to perform various actions such as managing appointments, consultants, job seekers, and login
-                information.</p>
+                <h2>Conclusion</h2>
+                <p>This documentation provides an overview of the database schema for the Job Seeker application. It
+                    describes the entities, attributes, and relationships that define the structure of the database.
+                    Understanding this schema is crucial for maintaining and developing the application's functionality.</p>
 
-            <h2>Table of Contents</h2>
-            <ol>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#authentication">Authentication</a></li>
-                <li><a href="#appointments">Appointments</a></li>
-                <li><a href="#consultants">Consultants</a></li>
-                <li><a href="#job-seekers">Job Seekers</a></li>
-                <li><a href="#login-information">Login Information</a></li>
-            </ol>
+                <h2>References</h2>
+                <p>Application Source Code and Entity Definitions</p>
+                <hr>
+            </div>
 
-            <h2>Introduction <a name="introduction"></a></h2>
-            <p>The Job Seeker backend APIs allow authorized users to manage appointments, consultants, job seekers, and
-                login information. All API endpoints require proper authentication to access.</p>
-            <h3>Base URL</h3>
-            <p>The base URL for all API endpoints is <code>https://jobseeker-ftq4.onrender.com/api/v1</code>.</p>
+            <div class="col-12" id="api" style="margin-top: 3vw">
+                <h1>Job Seeker Backend API Documentation</h1>
+                <p>This document provides information about the APIs exposed by the Job Seeker backend system. These APIs
+                    allow you to perform various actions such as managing appointments, consultants, job seekers, and login
+                    information.</p>
 
-            <h2>Authentication <a name="authentication"></a></h2>
-            <p>To access the Job Seeker backend APIs, you need to include an authentication token in the request
-                headers.</p>
-            <h3>Request Headers</h3>
-            <ul>
-                <li><code>Authorization</code>: Bearer <code>&lt;token&gt;</code></li>
-            </ul>
-            <p>Replace <code>&lt;token&gt;</code> with your valid authentication token.</p>
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#authentication">Authentication</a></li>
+                    <li><a href="#appointments">Appointments</a></li>
+                    <li><a href="#consultants">Consultants</a></li>
+                    <li><a href="#job-seekers">Job Seekers</a></li>
+                    <li><a href="#login-information">Login Information</a></li>
+                </ol>
 
-            <h2>Appointments <a name="appointments"></a></h2>
-            <h3>Create an Appointment</h3>
-            <p>Endpoint: <code>POST /api/v1/saveAppointment</code></p>
-            <p>Create a new appointment.</p>
-            <h4>Request Body:</h4>
-            <pre><code>{
+                <h2>Introduction <a name="introduction"></a></h2>
+                <p>The Job Seeker backend APIs allow authorized users to manage appointments, consultants, job seekers, and
+                    login information. All API endpoints require proper authentication to access.</p>
+                <h3>Base URL</h3>
+                <p>The base URL for all API endpoints is <code>https://jobseeker-ftq4.onrender.com/api/v1</code>.</p>
+
+                <h2>Authentication <a name="authentication"></a></h2>
+                <p>To access the Job Seeker backend APIs, you need to include an authentication token in the request
+                    headers.</p>
+                <h3>Request Headers</h3>
+                <ul>
+                    <li><code>Authorization</code>: Bearer <code>&lt;token&gt;</code></li>
+                </ul>
+                <p>Replace <code>&lt;token&gt;</code> with your valid authentication token.</p>
+
+                <h2>Appointments <a name="appointments"></a></h2>
+                <h3>Create an Appointment</h3>
+                <p>Endpoint: <code>POST /api/v1/saveAppointment</code></p>
+                <p>Create a new appointment.</p>
+                <h4>Request Body:</h4>
+                <pre><code>{
   "country": "Country Name",
   "category": "Appointment Category",
   "consultant": "Consultant Name",
@@ -277,28 +259,28 @@
   "date": "2023-08-15T10:00:00",
   "approved": false
 }</code></pre>
-            <h3>Get All Appointments</h3>
-            <p>Endpoint: <code>GET /api/v1/getAllAppointments</code></p>
-            <p>Retrieve a list of all appointments.</p>
-            <h3>Get Appointment by ID</h3>
-            <p>Endpoint: <code>GET /api/v1/getAppointmentById/{id}</code></p>
-            <p>Retrieve details of a specific appointment by ID.</p>
-            <h3>Delete an Appointment</h3>
-            <p>Endpoint: <code>DELETE /api/v1/deleteAppointment/{id}</code></p>
-            <p>Delete an appointment by ID.</p>
-            <h3>Update Appointment Approval</h3>
-            <p>Endpoint: <code>PUT /api/v1/updateAppointment/{id}</code></p>
-            <p>Update the approval status of an appointment by ID.</p>
-            <h3>Update Appointment</h3>
-            <p>Endpoint: <code>PUT /api/v1/updateAppointment/{id}</code></p>
-            <p>Update appointment details by ID.</p>
+                <h3>Get All Appointments</h3>
+                <p>Endpoint: <code>GET /api/v1/getAllAppointments</code></p>
+                <p>Retrieve a list of all appointments.</p>
+                <h3>Get Appointment by ID</h3>
+                <p>Endpoint: <code>GET /api/v1/getAppointmentById/{id}</code></p>
+                <p>Retrieve details of a specific appointment by ID.</p>
+                <h3>Delete an Appointment</h3>
+                <p>Endpoint: <code>DELETE /api/v1/deleteAppointment/{id}</code></p>
+                <p>Delete an appointment by ID.</p>
+                <h3>Update Appointment Approval</h3>
+                <p>Endpoint: <code>PUT /api/v1/updateAppointment/{id}</code></p>
+                <p>Update the approval status of an appointment by ID.</p>
+                <h3>Update Appointment</h3>
+                <p>Endpoint: <code>PUT /api/v1/updateAppointment/{id}</code></p>
+                <p>Update appointment details by ID.</p>
 
-            <h2>Consultants <a name="consultants"></a></h2>
-            <h3>Create a Consultant</h3>
-            <p>Endpoint: <code>POST /api/v1/saveConsultant</code></p>
-            <p>Create a new consultant.</p>
-            <h4>Request Body:</h4>
-            <pre><code>{
+                <h2>Consultants <a name="consultants"></a></h2>
+                <h3>Create a Consultant</h3>
+                <p>Endpoint: <code>POST /api/v1/saveConsultant</code></p>
+                <p>Create a new consultant.</p>
+                <h4>Request Body:</h4>
+                <pre><code>{
   "country": "Country Name",
   "jobCategory": "Job Category",
   "jobRole": ["Role 1", "Role 2"],
@@ -310,61 +292,72 @@
   "portfolio": "Consultant Portfolio",
   "verified": false
 }</code></pre>
-            <h3>Get All Consultants</h3>
-            <p>Endpoint: <code>GET /api/v1/getAllConsultants</code></p>
-            <p>Retrieve a list of all consultants.</p>
-            <h3>Get Consultant by Email</h3>
-            <p>Endpoint: <code>GET /api/v1/getConsultant/{email}</code></p>
-            <p>Retrieve details of a specific consultant by email.</p>
-            <h3>Delete a Consultant</h3>
-            <p>Endpoint: <code>DELETE /api/v1/deleteConsultantByEmail/{email}</code></p>
-            <p>Delete a consultant by email and send an email notification.</p>
-            <h3>Update Consultant Information</h3>
-            <p>Endpoint: <code>PUT /api/v1/updateConsultantByEmail/{email}</code></p>
-            <p>Update consultant information by email.</p>
-            <h3>Update Consultant Unavailable Dates</h3>
-            <p>Endpoint: <code>PUT /api/v1/setUnavailableDates/{email}</code></p>
-            <p>Update consultant's unavailable dates by email.</p>
+                <h3>Get All Consultants</h3>
+                <p>Endpoint: <code>GET /api/v1/getAllConsultants</code></p>
+                <p>Retrieve a list of all consultants.</p>
+                <h3>Get Consultant by Email</h3>
+                <p>Endpoint: <code>GET /api/v1/getConsultant/{email}</code></p>
+                <p>Retrieve details of a specific consultant by email.</p>
+                <h3>Delete a Consultant</h3>
+                <p>Endpoint: <code>DELETE /api/v1/deleteConsultantByEmail/{email}</code></p>
+                <p>Delete a consultant by email and send an email notification.</p>
+                <h3>Update Consultant Information</h3>
+                <p>Endpoint: <code>PUT /api/v1/updateConsultantByEmail/{email}</code></p>
+                <p>Update consultant information by email.</p>
+                <h3>Update Consultant Unavailable Dates</h3>
+                <p>Endpoint: <code>PUT /api/v1/setUnavailableDates/{email}</code></p>
+                <p>Update consultant's unavailable dates by email.</p>
 
-            <h2>Job Seekers <a name="job-seekers"></a></h2>
-            <h3>Send a Message</h3>
-            <p>Endpoint: <code>POST /api/v1/sendMessage</code></p>
-            <p>Send a message as a job seeker.</p>
-            <h4>Request Body:</h4>
-            <pre><code>{
+                <h2>Job Seekers <a name="job-seekers"></a></h2>
+                <h3>Send a Message</h3>
+                <p>Endpoint: <code>POST /api/v1/sendMessage</code></p>
+                <p>Send a message as a job seeker.</p>
+                <h4>Request Body:</h4>
+                <pre><code>{
   "email": "jobseeker@example.com",
   "message": "Message content."
 }</code></pre>
-            <h3>Get All Job Seeker Requests</h3>
-            <p>Endpoint: <code>GET /api/v1/loadJobSeekerRequests</code></p>
-            <p>Retrieve a list of all job seeker requests.</p>
-            <h3>Get Job Seeker by ID</h3>
-            <p>Endpoint: <code>GET /api/v1/getJobSeekerById/{id}</code></p>
-            <p>Retrieve details of a specific job seeker request by ID.</p>
-            <h3>Delete a Job Seeker Request</h3>
-            <p>Endpoint: <code>DELETE /api/v1/deleteMessageRequest/{email}</code></p>
-            <p>Delete a job seeker request by email.</p>
-            <h3>Update Job Seeker Request</h3>
-            <p>Endpoint: <code>PUT /api/v1/updateJobSeeker/{id}</code></p>
-            <p>Update job seeker request by ID.</p>
+                <h3>Get All Job Seeker Requests</h3>
+                <p>Endpoint: <code>GET /api/v1/loadJobSeekerRequests</code></p>
+                <p>Retrieve a list of all job seeker requests.</p>
+                <h3>Get Job Seeker by ID</h3>
+                <p>Endpoint: <code>GET /api/v1/getJobSeekerById/{id}</code></p>
+                <p>Retrieve details of a specific job seeker request by ID.</p>
+                <h3>Delete a Job Seeker Request</h3>
+                <p>Endpoint: <code>DELETE /api/v1/deleteMessageRequest/{email}</code></p>
+                <p>Delete a job seeker request by email.</p>
+                <h3>Update Job Seeker Request</h3>
+                <p>Endpoint: <code>PUT /api/v1/updateJobSeeker/{id}</code></p>
+                <p>Update job seeker request by ID.</p>
 
-            <h2>Login Information <a name="login-information"></a></h2>
-            <h3>Add a Consultant</h3>
-            <p>Endpoint: <code>POST /api/v1/addConsultant</code></p>
-            <p>Add login information for a new consultant.</p>
-            <h4>Request Body:</h4>
-            <pre><code>{
+                <h2>Login Information <a name="login-information"></a></h2>
+                <h3>Add a Consultant</h3>
+                <p>Endpoint: <code>POST /api/v1/addConsultant</code></p>
+                <p>Add login information for a new consultant.</p>
+                <h4>Request Body:</h4>
+                <pre><code>{
   "email": "consultant@example.com",
   "password": "password123"
 }</code></pre>
-            <h3>Get Consultant Login Info by Email</h3>
-            <p>Endpoint: <code>GET /api/v1/getConsultantByEmail/{email}</code></p>
-            <p>Retrieve login information of a consultant by email.</p>
-            <h3>Update Consultant Authentication</h3>
-            <p>Endpoint: <code>PUT /api/v1/updateAuth/{email}</code></p>
-            <p>Update consultant's authentication password by email.</p>
-            <hr>
+                <h3>Get Consultant Login Info by Email</h3>
+                <p>Endpoint: <code>GET /api/v1/getConsultantByEmail/{email}</code></p>
+                <p>Retrieve login information of a consultant by email.</p>
+                <h3>Update Consultant Authentication</h3>
+                <p>Endpoint: <code>PUT /api/v1/updateAuth/{email}</code></p>
+                <p>Update consultant's authentication password by email.</p>
+                <hr>
+            </div>
         </div>
+        <div class="main-container">
+            <img src="../img/works/doc-2.png" alt="doc-image">
+            <div class="d-flex align-items-center justify-content-center" style="padding: 20px 0">
+                Watch the live development&nbsp;&nbsp;&nbsp;
+                <a href="https://seeker-by-kavi.netlify.app/#/home"><button class="go">GO LIVE</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
     </div>
 </div>
 </body>
