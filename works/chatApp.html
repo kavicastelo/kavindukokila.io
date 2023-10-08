@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat App-Docs</title>
+    <!-- Bootstrap CSS File -->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+    <div class="row" style="padding: 30px">
+        <div class="col-sm-12 col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="#technical">Technical Documentation</a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="#database">Database Documentation</a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="#api">API Documentation</a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-md-row flex-column-reverse">
+        <div class="main-container">
+            <div class="col-12" id="technical" style="margin-top: 3vw">
+                <h1><u>Technical Documentation:</u></h1>
+                <h2>1. Introduction</h2>
+                <p>This is a text-based chat application(emojis and stickers are in development). users can sign up to
+                    the system using an image, username, email, and password. they can use email and password for the
+                    login. after login or signup, users navigate to the chat dashboard.</p>
+
+                <ul>
+                    <li>Version number: 1.0.0</li>
+                    <li>Platform: Android</li>
+                    <li>Language: Java</li>
+                    <li>JDK: 17</li>
+                    <li>SDK: Up to Android 5</li>
+                    <li>Database: Firebase</li>
+                    <li>IDE: Android Studio</li>
+                    <li>Type: Online social media</li>
+                    <li>Users Coverage: Small</li>
+                </ul>
+
+                <h2>2. Architecture:</h2>
+                <p>The Chat Application is an android base application built using Java. It follows a client-server
+                    architecture.</p>
+
+                <h2>3. Authentication:</h2>
+                <h4>Sign Up:</h4>
+                <p>Users can sign up for the application using the following information</p>
+                <ul>
+                    <li><strong>Username:</strong> This will show to the others</li>
+                    <li><strong>Email:</strong> One email can register once only</li>
+                    <li><strong>Password:</strong> Use strong password</li>
+                    <li><strong>Re-password:</strong> Verify the password</li>
+                </ul>
+
+                <h4>Sign In:</h4>
+                <p>Use the following information to log in to the system</p>
+                <ul>
+                    <li><strong>Email:</strong> Use registered email</li>
+                    <li><strong>Password:</strong> Use the correct password according above email</li>
+                </ul>
+
+                <p>Used Firebase Firestore to store user data. Images are encoded to String using Bitmap.</p>
+
+                <pre>
+FirebaseFirestore db = FirebaseFirestore.getInstance();
+HashMap< String, Object> user = new HashMap<>();
+user.put(Constants.KEY_NAME, binding.inputName.getText().toString());
+user.put(Constants.KEY_EMAIL, binding.inputEmail.getText().toString());
+user.put(Constants.KEY_PASSWORD, binding.inputPassword.getText().toString());
+user.put(Constants.KEY_IMAGE, encodedImg);
+db.collection(Constants.KEY_COLLECTION_USERS)
+        .add(user)
+        .addOnSuccessListener(documentReference -> {
+            preManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+            preManager.putString(Constants.KEY_USER_ID, documentReference.getId());
+            preManager.putString(Constants.KEY_NAME, binding.inputName.getText().toString());
+            preManager.putString(Constants.KEY_IMAGE, encodedImg);
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        })
+        .addOnFailureListener(exception -> {
+            showToasts(exception.getMessage());
+        });
+                </pre>
+
+                <pre>
+FirebaseFirestore db = FirebaseFirestore.getInstance();
+db.collection(Constants.KEY_COLLECTION_USERS)
+        .whereEqualTo(Constants.KEY_EMAIL, binding.inputEmail.getText().toString())
+        .whereEqualTo(Constants.KEY_PASSWORD, binding.inputPassword.getText().toString())
+        .get()
+        .addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0) {
+                DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+                preManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                preManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
+                preManager.putString(Constants.KEY_NAME, documentSnapshot.getString(Constants.KEY_NAME));
+                preManager.putString(Constants.KEY_IMAGE, documentSnapshot.getString(Constants.KEY_IMAGE));
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+            } else {
+                showToasts("Unable to SignIn");
+            }
+        });
+                </pre>
+
+                <h2>4. User Interface:</h2>
+                <ul>
+                    <li>Used user-friendly and attractive user interfaces.</li>
+                    <li>User experiences are improved.</li>
+                    <li>Very similar to Whatsapp application.</li>
+                </ul>
+
+                <h2>5. Chat Functionality:</h2>
+                <p>
+                    Users need to sign in or sign up first before starting the chats. After logging in or signing up
+                    they will navigate to the main dashboard. Current chats are displayed here. The bottom of the screen
+                    shows a <code>+</code> button and users can start new chats from here. After clicking the
+                    <code>+</code> button user can view
+                    the application's users list with their profile picture and username. After clicking any of them
+                    user navigates to the chat area and both can chat in there. Both users can see whether their last
+                    seen times, messages are delivered, seen, or only sent status.
+                </p>
+                <h2>6. Media Handling (Under Development):</h2>
+                <p>
+                    Images, Audio, and Video sending are under the development process. I hope all functions will be
+                    integrated next release version.
+                </p>
+
+                <h2>7. Notifications:</h2>
+                <p>
+                    When the user gets a message, the application sends a notification when the application is in the
+                    background or closed. notifications are handled by FirebaseMessagingService. Here is how to handle
+                    notifications by FirebaseMessagingService.
+                </p>
+
+                <pre>
+public class MessagingService extends FirebaseMessagingService {
+    @Override
+    public void onNewToken(@NonNull String token) {
+        super.onNewToken(token);
+    }
+
+    @Override
+    public void onMessageReceived(@NonNull RemoteMessage message) {
+        super.onMessageReceived(message);
+        User user = new User();
+        user.id = message.getData().get(Constants.KEY_USER_ID);
+        user.name = message.getData().get(Constants.KEY_NAME);
+        user.token = message.getData().get(Constants.KEY_FCM_TOKEN);
+
+        int notificationId = new Random().nextInt();
+        String chanelId = "chat_message";
+
+        Intent i = new Intent(this, chatActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        i.putExtra(Constants.KEY_USER, user);
+        PendingIntent pi = PendingIntent.getActivity(this, 0, i, 0);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, chanelId);
+        builder.setSmallIcon(R.drawable.ic_notification);
+        builder.setContentTitle(user.name);
+        builder.setContentText(message.getData().get(Constants.KEY_MESSAGE));
+        builder.setStyle(new NotificationCompat.BigTextStyle().bigText(
+                message.getData().get(Constants.KEY_MESSAGE)
+        ));
+        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        builder.setContentIntent(pi);
+        builder.setAutoCancel(true);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence chanelName = "Chat";
+            String chanelDescription = "This notification chanel is used for chat notifications";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(chanelId, chanelName, importance);
+            channel.setDescription(chanelDescription);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(this);
+        managerCompat.notify(notificationId, builder.build());
+    }
+}
+                </pre>
+
+                <h2>8. Offline Handling:</h2>
+                <p>
+                    When the user is offline application completely terminates. Senders can see messages with a <code>sent</code>
+                    status. When the user comes back online, he/she gets all notifications for every message.
+                </p>
+
+                <h2>9. Dependencies:</h2>
+                <pre>
+// default
+implementation <code>'androidx.appcompat:appcompat:1.4.1</code>
+implementation <code>'com.google.android.material:material:1.5.0'</code>
+implementation <code>'androidx.constraintlayout:constraintlayout:2.1.3'</code>
+testImplementation <code>'junit:junit:4.13.2'</code>
+androidTestImplementation <code>'androidx.test.ext:junit:1.1.3'</code>
+androidTestImplementation <code>'androidx.test.espresso:espresso-core:3.4.0'</code>
+
+// scalable size (different sizes screens support)
+implementation <code>'com.intuit.sdp:sdp-android:1.0.6'</code>
+implementation <code>'com.intuit.ssp:ssp-android:1.0.6'</code>
+
+//rounded image view
+implementation <code>'com.makeramen:roundedimageview:2.3.0'</code>
+
+//firebase
+implementation platform(<code>'com.google.firebase:firebase-bom:30.4.1'</code>)
+implementation <code>'com.google.firebase:firebase-messaging:23.0.8'</code>
+implementation <code>'com.google.firebase:firebase-firestore:24.3.1'</code>
+
+//multidex
+implementation <code>'androidx.multidex:multidex:2.0.1'</code>
+
+//Retrofit
+implementation <code>'com.squareup.retrofit2:retrofit:2.9.0'</code>
+implementation <code>'com.squareup.retrofit2:converter-scalars:2.9.0'</code>
+                </pre>
+                <hr>
+            </div>
+
+            <div class="col-12" id="database" style="margin-top: 3vw">
+                <h1><u>Database Documentation:</u></h1>
+                <h2>1. Database Schema:</h2>
+                <h5>User</h5>
+                <p>
+                    The User entity represents the users' information including their name, profile picture, email, and
+                    password.
+                </p>
+                <ul>
+                    <li><code>name</code>(String)</li>
+                    <li><code>image</code>(String)</li>
+                    <li><code>email</code>(String)</li>
+                    <li><code>token</code>(String)</li>
+                    <li><code>id</code>(String)</li>
+                </ul>
+
+                <h5>chatMessage</h5>
+                <p>
+                    chatMessage entity represents all messaging service information.
+                </p>
+                <ul>
+                    <li><code>senderId</code>(String)</li>
+                    <li><code>receiverId</code>(String)</li>
+                    <li><code>message</code>(String)</li>
+                    <li><code>dateTime</code>(String)</li>
+                    <li><code>dateObj</code>(Date)</li>
+                    <li><code>conversionId</code>(String)</li>
+                    <li><code>conversionName</code>(String)</li>
+                    <li><code>conversionImage</code>(String)</li>
+                </ul>
+
+                <h4>2. User Data:</h4>
+                <ul>
+                    <li><code>name</code>(String) - Username (Nick name).</li>
+                    <li><code>image</code>(String) - User's profile picture.</li>
+                    <li><code>email</code>(String) - User's email address.</li>
+                    <li><code>token</code>(String) - Unique user token.</li>
+                    <li><code>id</code>(String) - Unique identifier for the user.</li>
+                </ul>
+                <p>
+                    User data are stored when signing up to the application. Update and Delete methods are not
+                    integrated yet.
+                </p>
+
+                <h4>3. Chat Data:</h4>
+                <ul>
+                    <li><code>senderId</code>(String) - Unique identifier for the sender</li>
+                    <li><code>receiverId</code>(String) - Unique identifier for the receiver</li>
+                    <li><code>message</code>(String) - Message content</li>
+                    <li><code>dateTime</code>(String) - Date and time of the message</li>
+                    <li><code>dateObj</code>(Date) - Date object</li>
+                    <li><code>conversionId</code>(String) - Unique identifier for the conversion</li>
+                    <li><code>conversionName</code>(String) - Name of the conversion</li>
+                    <li><code>conversionImage</code>(String) - Profile picture of the conversion</li>
+                </ul>
+                <p>
+                    Chat data are stored when sending messages. Update and Delete methods are not integrated yet.
+                </p>
+                <hr>
+            </div>
+
+            <div class="col-12" id="api" style="margin-top: 3vw">
+                <h1><u>API Documentation</u></h1>
+                <h4>ApiClient:</h4>
+                <pre>
+    public class ApiClient {
+
+    private static Retrofit retrofit = null;
+    private static ScalarsConverterFactory scalarsConverterFactory;
+
+    public static Retrofit getClient() {
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl("https://fcm.googleapis.com/fcm/")
+                    .addConverterFactory(scalarsConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
+
+}
+                </pre>
+
+                <h4>API Services</h4>
+                <pre>
+    public interface ApiService {
+
+    @POST("send")
+    Call< String > sendMessage(
+            @HeaderMap HashMap< String, String > headers,
+            @Body String messageBody
+    );
+
+}
+                </pre>
+                <p>Only<code>sendMessage</code> API call is used here. Other database operations are done inside of functions themselves.</p>
+
+                <h1><u>Additional Considerations:</u></h1>
+                <ul>
+                    <li><b>Security:</b> Mainly used register and sign-in options for security. Also used FCM tokens for users. Restricted multiple accounts for one email.</li>
+                    <li><b>Performance:</b> Images are encoded into strings to increase the performance of the application.</li>
+                    <li><b>Future Enhancements:</b> This application is now based on only texts. Future releases will support images, audio, and video too.</li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="main-container">
+            <img src="../img/works/doc-3.png" alt="doc-image">
+            <div class="d-flex align-items-center justify-content-center" style="padding: 20px 0">
+                Download the application&nbsp;&nbsp;&nbsp;
+                <a href="https://ebillscbc.000webhostapp.com/my%20apps/chat%20app.apk">
+                    <button class="go">DOWNLOAD</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

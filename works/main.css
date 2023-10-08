@@ -31,6 +31,9 @@ pre{
     padding: 5px;
     border-radius: 8px;
 }
+pre code{
+    color: deeppink;
+}
 
 a{
     text-decoration: none;
