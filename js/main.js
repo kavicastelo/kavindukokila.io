@@ -117,299 +117,36 @@
 })(jQuery);
 
 //progress bars
-// node
-let nodebar = document.getElementById('nodeprogress'),
-	nodewidth = parseFloat(getComputedStyle(nodebar).width);
-let node = setInterval(function() {
+// Animate all progress bars
+const observer = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			// Animate progress bars inside this section
+			entry.target.querySelectorAll('.progress-bar').forEach(bar => {
+				let target = parseInt(bar.getAttribute('aria-valuenow'));
+				let width = 0;
 
-	if(nodewidth!==80){
-		nodewidth += 5;
-		nodebar.style.width = nodewidth + '%';
-	}
-	else {
-		clearInterval(node);
-	}
-}, 200);
+				let interval = setInterval(() => {
+					if (width >= target) {
+						clearInterval(interval);
+					} else {
+						width++;
+						bar.style.width = width + '%';
+					}
+				}, 10);
+			});
 
-// express
-let expressbar = document.getElementById('expressprogress'),
-	expresswidth = parseFloat(getComputedStyle(expressbar).width);
-let express = setInterval(function() {
+			// Stop observing once animation is done
+			observer.unobserve(entry.target);
+		}
+	});
+}, { threshold: 0.4 });
 
-	if(expresswidth!==80){
-		expresswidth += 5;
-		expressbar.style.width = expresswidth + '%';
-	}
-	else {
-		clearInterval(express);
-	}
-}, 200);
-
-// android
-let javabar = document.getElementById('javaprogress'),
-	javawidth = parseFloat(getComputedStyle(javabar).width);
-let java = setInterval(function() {
-
-	if(javawidth!==80){
-		javawidth += 5;
-		javabar.style.width = javawidth + '%';
-	}
-	else {
-		clearInterval(java);
-	}
-}, 200);
-
-// kotlin
-let kotlinbar = document.getElementById('kotlinprogress'),
-	kotlinwidth = parseFloat(getComputedStyle(kotlinbar).width);
-let kotlin = setInterval(function() {
-
-	if(kotlinwidth!==50){
-		kotlinwidth += 5;
-		kotlinbar.style.width = kotlinwidth + '%';
-	}
-	else {
-		clearInterval(kotlin);
-	}
-}, 200);
-
-// java
-let jbar = document.getElementById('jprogress'),
-	jwidth = parseFloat(getComputedStyle(jbar).width);
-let j = setInterval(function() {
-
-	if(jwidth!==75){
-		jwidth += 5;
-		jbar.style.width = jwidth + '%';
-	}
-	else {
-		clearInterval(j);
-	}
-}, 200);
-
-// html
-let htmlbar = document.getElementById('htmlprogress'),
-	htmlwidth = parseFloat(getComputedStyle(htmlbar).width);
-let html = setInterval(function() {
-
-	if(htmlwidth!==95){
-		htmlwidth += 5;
-		htmlbar.style.width = htmlwidth + '%';
-	}
-	else {
-		clearInterval(html);
-	}
-}, 200);
-
-// css
-let cssbar = document.getElementById('cssprogress'),
-	csswidth = parseFloat(getComputedStyle(cssbar).width);
-let css = setInterval(function() {
-
-	if(csswidth!==85){
-		csswidth += 5;
-		cssbar.style.width = csswidth + '%';
-	}
-	else {
-		clearInterval(css);
-	}
-}, 200);
-
-// php
-let phpbar = document.getElementById('phpprogress'),
-	phpwidth = parseFloat(getComputedStyle(phpbar).width);
-let php = setInterval(function() {
-
-	if(phpwidth!==60){
-		phpwidth += 5;
-		phpbar.style.width = phpwidth + '%';
-	}
-	else {
-		clearInterval(php);
-	}
-}, 200);
-
-// js
-let jsbar = document.getElementById('jsprogress'),
-	jswidth = parseFloat(getComputedStyle(jsbar).width);
-let js = setInterval(function() {
-
-	if(jswidth!==75){
-		jswidth += 5;
-		jsbar.style.width = jswidth + '%';
-	}
-	else {
-		clearInterval(js);
-	}
-}, 200);
-
-// spring
-let springbar = document.getElementById('springprogress'),
-	springwidth = parseFloat(getComputedStyle(springbar).width);
-let spring = setInterval(function() {
-
-	if(springwidth!==70){
-		springwidth += 5;
-		springbar.style.width = springwidth + '%';
-	}
-	else {
-		clearInterval(spring);
-	}
-}, 200);
-
-// ts
-let tsbar = document.getElementById('tsprogress'),
-	tswidth = parseFloat(getComputedStyle(tsbar).width);
-let ts = setInterval(function() {
-
-	if(tswidth!==80){
-		tswidth += 5;
-		tsbar.style.width = tswidth + '%';
-	}
-	else {
-		clearInterval(ts);
-	}
-}, 200);
-
-// angular
-let angbar = document.getElementById('angularprogress'),
-	angwidth = parseFloat(getComputedStyle(angbar).width);
-let ang = setInterval(function() {
-
-	if(angwidth!==85){
-		angwidth += 5;
-		angbar.style.width = angwidth + '%';
-	}
-	else {
-		clearInterval(ang);
-	}
-}, 200);
-
-// react
-let reactbar = document.getElementById('reactprogress'),
-	reactwidth = parseFloat(getComputedStyle(reactbar).width);
-let react = setInterval(function() {
-
-	if(reactwidth!==55){
-		reactwidth += 5;
-		reactbar.style.width = reactwidth + '%';
-	}
-	else {
-		clearInterval(react);
-	}
-}, 200);
-
-// react native
-let rnbar = document.getElementById('react-nativeprogress'),
-	rnwidth = parseFloat(getComputedStyle(rnbar).width);
-let rn = setInterval(function() {
-
-	if(rnwidth!==65){
-		rnwidth += 5;
-		rnbar.style.width = rnwidth + '%';
-	}
-	else {
-		clearInterval(rn);
-	}
-}, 200);
-
-// boostrap
-let btbar = document.getElementById('btprogress'),
-	btwidth = parseFloat(getComputedStyle(btbar).width);
-let bt = setInterval(function() {
-
-	if(btwidth!==75){
-		btwidth += 5;
-		btbar.style.width = angwidth + '%';
-	}
-	else {
-		clearInterval(bt);
-	}
-}, 200);
-
-// jquery
-let jqbar = document.getElementById('jqprogress'),
-	jqwidth = parseFloat(getComputedStyle(jqbar).width);
-let jq = setInterval(function() {
-
-	if(jqwidth!==30){
-		jqwidth += 5;
-		jqbar.style.width = angwidth + '%';
-	}
-	else {
-		clearInterval(jq);
-	}
-}, 200);
-
-// c#
-let csharpbar = document.getElementById('csharpprogress'),
-	csharpwidth = parseFloat(getComputedStyle(csharpbar).width);
-let csharp = setInterval(function() {
-
-	if(csharpwidth!==45){
-		csharpwidth += 5;
-		csharpbar.style.width = csharpwidth + '%';
-	}
-	else {
-		clearInterval(csharp);
-	}
-}, 200);
-
-// c++
-let cplusbar = document.getElementById('cplusprogress'),
-	cpluswidth = parseFloat(getComputedStyle(cplusbar).width);
-let cplus = setInterval(function() {
-
-	if(cpluswidth!==30){
-		cpluswidth += 5;
-		cplusbar.style.width = cpluswidth + '%';
-	}
-	else {
-		clearInterval(cplus);
-	}
-}, 200);
-
-// mongo
-let mnbar = document.getElementById('mongoprogress'),
-	mnwidth = parseFloat(getComputedStyle(mnbar).width);
-let mn = setInterval(function() {
-
-	if(mnwidth!==85){
-		mnwidth += 5;
-		mnbar.style.width = mnwidth + '%';
-	}
-	else {
-		clearInterval(mn);
-	}
-}, 200);
-
-// mysql
-let mysqlbar = document.getElementById('mysqlprogress'),
-	mysqlwidth = parseFloat(getComputedStyle(mysqlbar).width);
-let mysql = setInterval(function() {
-
-	if(mysqlwidth!==70){
-		mysqlwidth += 5;
-		mysqlbar.style.width = mysqlwidth + '%';
-	}
-	else {
-		clearInterval(mysql);
-	}
-}, 200);
-
-// mysqli
-let mysqlibar = document.getElementById('mysqliprogress'),
-	mysqliwidth = parseFloat(getComputedStyle(mysqlibar).width);
-let mysqli = setInterval(function() {
-
-	if(mysqliwidth!==75){
-		mysqliwidth += 5;
-		mysqlibar.style.width = mysqliwidth + '%';
-	}
-	else {
-		clearInterval(mysqli);
-	}
-}, 200);
+// Attach to the "about" section or wherever progress bars exist
+const aboutSection = document.querySelector('#about');
+if (aboutSection) {
+	observer.observe(aboutSection);
+}
 
 // english
 let engbar = document.getElementById('Englishprogress'),

@@ -1,0 +1,9 @@
+.idea
+*~
+css/*~
+js/*~
+lib/*~
+images/*~
+*.iml
+*.iml.*
+.DS_Store
